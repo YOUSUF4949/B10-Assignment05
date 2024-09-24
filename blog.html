@@ -26,7 +26,7 @@
 <!--header section start -->
 <header>
     <nav class="bg-[#F9F7F3] flex items-center justify-between lg:justify-around py-7 px-3">
-        <button type="button" class="btn bg-[#B4F461] text-lg lg:text-xl border-none outline-none lg:px-7 hover:bg-slate-700 hover:text-white">Home</button>
+        <button type="button" id="home-page" class="btn bg-[#B4F461] text-lg lg:text-xl border-none outline-none lg:px-7 hover:bg-slate-700 hover:text-white">Home</button>
         <div class="flex items-center justify-center space-x-3">
           <img src="/assets/logo.png" alt="Logo">
           <h3 class="font-semibold text-2xl hidden lg:block">Donate Bangladesh</h3>
@@ -41,84 +41,84 @@
 <!-- main section start here -->
 <main>
   <!-- quition container -->
-  <div class="w-9/12 mx-auto mt-20">
+  <div class=" px-3 lg:px-0 w-full lg:w-9/12 mx-auto mt-10 lg:mt-20">
     <!-- quistion Title -->
     <div class="flex items-center space-x-3 mb-5">
-      <h2 class="font-bold text-4xl">Importent FAQ</h2>
+      <h2 class="font-bold text-2xl lg:text-4xl">Importent FAQ</h2>
       <img src="assets/question.png" alt="Quistion FAG Icon">
     </div>
     <!-- some Quistions -->
     <div class="">
     <!-- quistion 01-->
-    <div class="space-y-4 flex items-center justify-between border px-10 py-7 ">
+    <div id="quistion-box1" class="space-y-4 flex lg:items-center justify-between border px-3 lg:px-10 py-3 lg:py-7 ">
       <div class="space-y-3 lg:w-8/12">
-        <h2 class="font-bold text-2xl ">What Is the Document Object Model(DOM)?</h2>
-        <p class="text-lg font-semibold ">When a web page is loaded, the browser creates a Document Object Model of the page.</p>
+        <h2 class="font-bold text-lg lg:text-2xl ">What Is the Document Object Model(DOM)?</h2>
+        <p id="answer01" class="text-base lg:text-lg font-semibold hidden">When a web page is loaded, the browser creates a Document Object Model of the page.</p>
       </div>
       <!-- icons  -->
     <div>
-      <div class="hidden">
+      <div id="down-arrow1" class="hidden">
         <i class="fa-solid fa-angle-down" class=""></i>
       </div>
-      <div class="">
+      <div id="up-arrow1" class="">
         <i class="fa-solid fa-angle-up " class=""></i>
       </div>
     </div>
     </div>
     <!-- quistion 02-->
-    <div class="space-y-4 flex items-center justify-between border px-10 py-7">
+    <div id="quistion-box2" class="space-y-4 flex lg:items-center justify-between border p-3 lg:px-10 lg:py-7">
       <div class="space-y-3 lg:w-8/12 ">
-        <h2 class="font-bold text-2xl ">How to you select an element from the DOM?</h2>
-        <p class="text-lg font-semibold ">getElementById() method of the Document interface returns an Element object representing the element whose id property matches the specified string.</p>
+        <h2 class="font-bold text-lg lg:text-2xl ">How to you select an element from the DOM?</h2>
+        <p id="answer02" class="text-base lg:text-lg font-semibold hidden ">getElementById() method of the Document interface returns an Element object representing the element whose id property matches the specified string.</p>
       </div>
       <!-- icons  -->
-    <div>
-      <div class="hidden">
-        <i class="fa-solid fa-angle-down" class=""></i>
+      <div>
+        <div id="down-arrow2" class="hidden">
+          <i class="fa-solid fa-angle-down" class=""></i>
+        </div>
+        <div id="up-arrow2" class="">
+          <i class="fa-solid fa-angle-up " class=""></i>
+        </div>
       </div>
-      <div class="">
-        <i class="fa-solid fa-angle-up " class=""></i>
-      </div>
-    </div>
     </div>  
     <!-- quistion 03-->
-    <div class="space-y-4 flex items-center justify-between border px-10 py-7">
+    <div id="quistion-box3" class="space-y-4 flex lg:items-center justify-between border p-3 lg:px-10 lg:py-7">
       <div class="space-y-3 lg:w-8/12">
-        <h2 class="font-bold text-2xl ">What Is the Event Delegation in the text of the DOM, And Why it is useful?</h2>
-        <p class="text-lg font-semibold ">the process of using event propagation (bubbling) to handle events at a higher level in the DOM than the element on which the event originated.</p>
+        <h2 class="font-bold text-lg lg:text-2xl ">What Is the Event Delegation in the text of the DOM, And Why it is useful?</h2>
+        <p id="answer03" class="text-base lg:text-lg font-semibold hidden">the process of using event propagation (bubbling) to handle events at a higher level in the DOM than the element on which the event originated.</p>
       </div>
       <!-- icons  -->
-    <div>
-      <div class="hidden">
-        <i class="fa-solid fa-angle-down" class=""></i>
+      <div>
+        <div id="down-arrow3" class="hidden">
+          <i class="fa-solid fa-angle-down" class=""></i>
+        </div>
+        <div id="up-arrow3" class="">
+          <i class="fa-solid fa-angle-up " class=""></i>
+        </div>
       </div>
-      <div class="">
-        <i class="fa-solid fa-angle-up " class=""></i>
-      </div>
-    </div>
     </div>
     <!-- quistion 04-->
-    <div class="space-y-4 flex items-center justify-between border px-10 py-7">
+    <div id="quistion-box4" class="space-y-4 flex lg:items-center justify-between border p-3 lg:px-10 lg:py-7">
       <div class="space-y-3 lg:w-8/12">
-        <h2 class="font-bold text-2xl ">How do you Menipulate an elements Attributes And style using the DOM ?</h2>
-        <p class="text-lg font-semibold "> Changing an element's style (CSS) attributes is one of the ways in which the DOM can be used. For example, in the code below, the onfocus event handler method is used to change the When this event occurs, the element's background color will change to purple.</p>
+        <h2 class="font-bold text-lg lg:text-2xl ">How do you Menipulate an elements Attributes And style using the DOM ?</h2>
+        <p id="answer04" class="text-base lg:text-lg font-semibold hidden "> Changing an element's style (CSS) attributes is one of the ways in which the DOM can be used. For example, in the code below, the onfocus event handler method is used to change the When this event occurs, the element's background color will change to purple.</p>
       </div>
       <!-- icons  -->
-    <div>
-      <div class="hidden">
-        <i class="fa-solid fa-angle-down" class=""></i>
-      </div>
-      <div class="">
-        <i class="fa-solid fa-angle-up " class=""></i>
+      <div>
+        <div id="down-arrow4" class="hidden">
+          <i class="fa-solid fa-angle-down" class=""></i>
+        </div>
+        <div id="up-arrow4" class="">
+          <i class="fa-solid fa-angle-up " class=""></i>
+        </div>
       </div>
     </div>
-    </div>
-    
     </div>
   </div>
 </main>
 <!-- main section end here -->
 
 <!-- script tag for connect Javascript  -->
+<script src="blog.js"></script>
 </body>
 </html>
