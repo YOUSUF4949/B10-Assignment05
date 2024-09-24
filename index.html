@@ -38,15 +38,16 @@
 
   <!-- Donation And History Button -->
   <div class="justify-center mt-5 lg:mt-14 lg:space-x-5 flex flex-col lg:flex-none lg:flex-row px-5 lg:px-0 space-y-3 lg:space-y-0">
-    <button class="btn btn-outline col-span-1 lg:px-10">Donation</button>
-    <button class="btn btn-outline col-span-1 lg:px-10">History</button>
+    <button id="donate" class="btn text-xl btn-outline bg-[#B4F461] font-semibold col-span-1 lg:px-10">Donation</button>
+    <button id="donate-history" class="btn btn-outline text-xl font-semibold col-span-1 lg:px-10">History</button>
   </div>
 </header>
 <!-- divided -->
 <!-- header Section end -->
 <!-- main section start here -->
-<main class="w-full lg:w-9/12 mx-auto mt-7 lg:mt-12 px-5 pb-20">
-<div class="space-y-5">
+<main class="w-full lg:w-9/12 mx-auto mt-7 lg:mt-12 px-3 pb-20">
+<!-- Donations card starts here -->
+<div id="donate-container" class="space-y-5">
 <!-- card 01 -->
 <div class="grid grid-cols-2 border border-slate-300 p-4 lg:p-5 rounded-2xl space-y-4">
   <!-- card Image -->
@@ -117,10 +118,25 @@
   </div>
 </div>
 </div>
+<!-- Donations card starts here -->
+<!-- History Section Starts Here -->
+<div id="donate-culection" class="hidden">
+<!-- always show this -->
+<div id="no-culaction" class="flex flex-col space-y-5 items-center justify-center border py-7">
+  <img class="w-1/5 h-1/5" src="assets/donate.png" alt="donate">
+  <h2 class="text-2xl lg:text-4xl font-bold">No Donate Colaction</h2>
+</div>
+<!-- culection Data -->
+<div>
+  
+</div>
+</div>
+<!-- History Section Ends Here -->
 </main>
 <!-- main section end here -->
 </div>
 <!-- Here Script File  -->
 <script src="home.js"></script>
+<script src="donate-culaction.js"></script>
 </body>
 </html>
