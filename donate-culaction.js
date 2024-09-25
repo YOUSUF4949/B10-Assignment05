@@ -17,7 +17,6 @@ donate.addEventListener('click', function(){
 });
 
 history.addEventListener('click', function(){
-    console.log('history click is occured');
     history.style.backgroundColor = '#B4F461';
     donate.style.backgroundColor = 'white';
     history.style.color = 'black';
@@ -26,3 +25,25 @@ history.addEventListener('click', function(){
     donateCardContainer.classList.add('hidden');
     donateCulection.classList.remove('hidden');
 });
+// donate and button work have completed;
+
+// add the Donate Culaction data
+let dataCard = document.getElementById('data');
+// select donate Now button
+let donateAmount = document.getElementById("donate-amount");
+let donateBtn = document.getElementById('donate-btn01');
+donateBtn.addEventListener('click', function(event){
+    event.preventDefault();
+    let mainBalance = document.getElementById('main-balance').innerText;
+    let donateCurrentBalance = document.getElementById('current-balance').innerText;
+    let inputBalance = document.getElementById('donate-amount').value;
+    // Decriment money of the main balance for the donate;
+    let donate = parseInt(mainBalance) - parseInt(inputBalance);
+    document.getElementById('main-balance').innerText = donate;
+    // add the money in donate current balance;
+    let addCurrentBalance = parseInt(donateCurrentBalance) + parseInt(inputBalance);
+    document.getElementById('current-balance').innerText = addCurrentBalance;
+
+    // clear input field;
+    document.getElementById('donate-amount').value = '';
+})
