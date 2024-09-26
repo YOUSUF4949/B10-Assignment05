@@ -45,7 +45,8 @@ donateBtn.addEventListener('click', function(event){
         // History empty page hidden;
         let emptyPage = document.getElementById('no-culaction');
             emptyPage.classList.add('hidden');
-        // Culaction Data added in history page;
+        
+            // Culaction Data added in history page;
         let parent = document.getElementById('culection-data-container')
         let dataBox = document.createElement('div');
         let donateTitle01 = document.getElementById('donateTitle01').innerText;
@@ -68,14 +69,17 @@ donateBtn.addEventListener('click', function(event){
         dataBox.classList.add('border', 'py-4', 'px-3', 'lg:px-10');
         createDonateTitle.classList.add('font-bold','text-xl', 'lg:text-2xl', 'pb-5');
         donateTime.classList.add('font-semibold')
-        // clear input field after the submit balance;
+
+        // clear input Field
         document.getElementById('donate-amount').value = '';
+        
     }else{
         alert('Invalid Amount');
     }
+
 })
 
-// donation two no card working;
+// donation 02 no card working;
 let donateButton02 = document.getElementById('donate-btn02');
 donateButton02.addEventListener('click', function(event){
     event.preventDefault();
@@ -88,6 +92,10 @@ donateButton02.addEventListener('click', function(event){
         document.getElementById('main-balance').innerText = subtractionMainMoney;
         let addMoneyInDonate = parseInt(donateMoney) + parseInt(currentBalance02);
         document.getElementById('current-balance02').innerText = addMoneyInDonate;
+
+        // History empty page hidden;
+        let emptyPage = document.getElementById('no-culaction');
+            emptyPage.classList.add('hidden');
 
         // culaction data added here
         let parent = document.getElementById('culection-data-container')
@@ -116,6 +124,54 @@ donateButton02.addEventListener('click', function(event){
         document.getElementById('donate-amount02').value = '';
     }else{
         alert('Invalid Amount')
-    }
-    
+    } 
 })
+
+// donation 03 no card working;
+let donateButton03 = document.getElementById('donate-button03');
+donateButton03.addEventListener('click', function(event){
+    event.preventDefault();
+    let mainbalance03 = document.getElementById('main-balance').innerText;
+    let currentBalance03 = document.getElementById('current-balance03').innerText;
+    let donateMoney03 = document.getElementById('donate-money03').value;
+    
+    if(parseInt(mainbalance03) > parseInt(donateMoney03) && parseInt(donateMoney03) > 0 && ! isNaN(donateMoney03)){
+        let substractionMainBalance = parseInt(mainbalance03) - parseInt(donateMoney03);
+        document.getElementById('main-balance').innerText = substractionMainBalance;
+        let additionCurrentBalance = parseInt(currentBalance03) + parseInt(donateMoney03);
+        document.getElementById('current-balance03').innerText = additionCurrentBalance;
+
+        // History empty page hidden;
+        let emptyPage = document.getElementById('no-culaction');
+            emptyPage.classList.add('hidden');
+        
+        // culaction data added here
+        let parent = document.getElementById('culection-data-container')
+        let dataBox = document.createElement('div');
+        let donateTitle03 = document.getElementById('donateTitle03').innerText;
+        parent.appendChild(dataBox);
+        // create donate colaction title and text;
+        let createDonateTitle = document.createElement('h2');
+        let createText = document.createTextNode(`${donateMoney03}, ${donateTitle03}`);
+        createDonateTitle.appendChild(createText);
+        dataBox.appendChild(createDonateTitle);
+        // create date donation;
+        let date = new Date();
+        let donateTime = document.createElement('p');
+        let createTimeText = document.createTextNode(` ${date}`);
+        donateTime.appendChild(createTimeText);
+        // add the create all elements in parent(data) Tag
+        dataBox.appendChild(createDonateTitle);
+        dataBox.appendChild(donateTime);
+        // styling the create element;
+        dataBox.classList.add('border', 'py-4', 'px-3', 'lg:px-10');
+        createDonateTitle.classList.add('font-bold','text-xl', 'lg:text-2xl', 'pb-5');
+        donateTime.classList.add('font-semibold')
+
+        // clear Input field;
+        document.getElementById('donate-money03').value = '';
+
+    }else{
+        alert('Invalid Amount');
+    }
+});
