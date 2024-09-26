@@ -6,7 +6,6 @@ let history = document.getElementById('donate-history');
 let donateCardContainer = document.getElementById('donate-container');
 let donateCulection = document.getElementById('donate-culection');
 donate.addEventListener('click', function(){
-    console.log('donate click is occured');
     donate.style.backgroundColor = '#B4F461';
     history.style.backgroundColor = 'white';
     donate.style.color = 'black';
@@ -29,7 +28,7 @@ history.addEventListener('click', function(){
 
 // add the Donate Culaction data
 let dataCard = document.getElementById('data');
-// select donate Now button
+// select donate Now button 01
 let donateAmount = document.getElementById("donate-amount");
 let donateBtn = document.getElementById('donate-btn01');
 donateBtn.addEventListener('click', function(event){
@@ -37,13 +36,12 @@ donateBtn.addEventListener('click', function(event){
     let mainBalance = document.getElementById('main-balance').innerText;
     let donateCurrentBalance = document.getElementById('current-balance').innerText;
     let inputBalance = document.getElementById('donate-amount').value;
-    if((parseInt(mainBalance) > parseInt(inputBalance) && parseInt(inputBalance) > 0)){ 
+    if(parseInt(mainBalance) > parseInt(inputBalance) && parseInt(inputBalance) > 0 && !isNaN(inputBalance)){ 
         let updateMainBalance = parseInt(mainBalance) - parseInt(inputBalance);
         document.getElementById('main-balance').innerText = updateMainBalance;
         // add the current balance
         let donateAddition = parseInt(donateCurrentBalance) + parseInt(inputBalance);
         document.getElementById('current-balance').innerText = donateAddition;
-
         // History empty page hidden;
         let emptyPage = document.getElementById('no-culaction');
             emptyPage.classList.add('hidden');
@@ -58,13 +56,11 @@ donateBtn.addEventListener('click', function(event){
         let createText = document.createTextNode(`${inputBalance}, ${donateTitle01}`);
         createDonateTitle.appendChild(createText);
         dataBox.appendChild(createDonateTitle);
-        console.log(createDonateTitle)
         // create date donation;
         let date = new Date();
         let donateTime = document.createElement('p');
         let createTimeText = document.createTextNode(` ${date}`);
         donateTime.appendChild(createTimeText);
-        console.log(donateTime)
         // add the create all elements in parent(data) Tag
         dataBox.appendChild(createDonateTitle);
         dataBox.appendChild(donateTime);
@@ -79,4 +75,47 @@ donateBtn.addEventListener('click', function(event){
     }
 })
 
+// donation two no card working;
+let donateButton02 = document.getElementById('donate-btn02');
+donateButton02.addEventListener('click', function(event){
+    event.preventDefault();
+    let mainbalance02 = document.getElementById('main-balance').innerText;
+    let currentBalance02 = document.getElementById('current-balance02').innerText;
+    let donateMoney = document.getElementById('donate-amount02').value;
 
+    if(parseInt(mainbalance02) > parseInt(currentBalance02) && parseInt(donateMoney) > 0 && ! isNaN(donateMoney)){
+        let subtractionMainMoney = parseInt(mainbalance02) - parseInt(donateMoney);
+        document.getElementById('main-balance').innerText = subtractionMainMoney;
+        let addMoneyInDonate = parseInt(donateMoney) + parseInt(currentBalance02);
+        document.getElementById('current-balance02').innerText = addMoneyInDonate;
+
+        // culaction data added here
+        let parent = document.getElementById('culection-data-container')
+        let dataBox = document.createElement('div');
+        let donateTitle02 = document.getElementById('donateTitle02').innerText;
+        parent.appendChild(dataBox);
+        // create donate colaction title and text;
+        let createDonateTitle = document.createElement('h2');
+        let createText = document.createTextNode(`${donateMoney}, ${donateTitle02}`);
+        createDonateTitle.appendChild(createText);
+        dataBox.appendChild(createDonateTitle);
+        // create date donation;
+        let date = new Date();
+        let donateTime = document.createElement('p');
+        let createTimeText = document.createTextNode(` ${date}`);
+        donateTime.appendChild(createTimeText);
+        // add the create all elements in parent(data) Tag
+        dataBox.appendChild(createDonateTitle);
+        dataBox.appendChild(donateTime);
+        // styling the create element;
+        dataBox.classList.add('border', 'py-4', 'px-3', 'lg:px-10');
+        createDonateTitle.classList.add('font-bold','text-xl', 'lg:text-2xl', 'pb-5');
+        donateTime.classList.add('font-semibold')
+
+        // clear input field after the submit balance;
+        document.getElementById('donate-amount02').value = '';
+    }else{
+        alert('Invalid Amount')
+    }
+    
+})
