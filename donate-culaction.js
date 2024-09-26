@@ -75,6 +75,8 @@ donateBtn.addEventListener('click', function(event){
         
     }else{
         alert('Invalid Amount');
+        // clear input field 
+        document.getElementById('donate-amount').value = '';
     }
 
 })
@@ -123,7 +125,9 @@ donateButton02.addEventListener('click', function(event){
         // clear input field after the submit balance;
         document.getElementById('donate-amount02').value = '';
     }else{
-        alert('Invalid Amount')
+        alert('Invalid Amount');
+        // clear input field 
+        document.getElementById('donate-amount02').value = '';
     } 
 })
 
@@ -173,5 +177,7 @@ donateButton03.addEventListener('click', function(event){
 
     }else{
         alert('Invalid Amount');
+         // clear input field 
+         document.getElementById('donate-money03').value = '';
     }
 });
